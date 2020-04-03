@@ -17,7 +17,7 @@ public class Serviciu {
     ArrayList<Angajat> angajati = new ArrayList<Angajat>();
 
     public void CitesteDepartamenteFisier() {
-        String fileName = "C:\\Users\\opale\\IdeaProjects\\asdd\\out\\production\\asdd\\com\\company\\Fisiere\\Departamente.csv";
+        String fileName = "C:\\Users\\opale\\IdeaProjects\\proiect PAO\\src\\com\\company\\Fisiere\\Departamente.csv";
         File file = new File(fileName);
         try {
             Scanner inputStream = new Scanner(file);
@@ -68,7 +68,7 @@ public class Serviciu {
     }
 
     public void CitesteAngajatiFisier() {
-        String fileName = "C:\\Users\\opale\\IdeaProjects\\asdd\\out\\production\\asdd\\com\\company\\Fisiere\\Angajati.csv";
+        String fileName = "C:\\Users\\opale\\IdeaProjects\\proiect PAO\\src\\com\\company\\Fisiere\\Angajati.csv";
         File file = new File(fileName);
         try{
             Scanner inputStream = new Scanner(file);
@@ -126,7 +126,7 @@ public class Serviciu {
     }
 
     public void CitesteActivitatiIndividualeDinFisier() {
-        String fileName = "C:\\Users\\opale\\IdeaProjects\\asdd\\out\\production\\asdd\\com\\company\\Fisiere\\Activitati.csv";
+        String fileName = "C:\\Users\\opale\\IdeaProjects\\proiect PAO\\src\\com\\company\\Fisiere\\Activitati.csv";
         File file = new File(fileName);
         try {
             Scanner inputStream = new Scanner(file);
