@@ -8,28 +8,28 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 public class AuditService {
-    private final String path;
+    private String path;
 
-    AuditService (String p){
-        this.path = p;
+    AuditService (String cale){
+        this.path = cale;
     }
 
-    void addRecord(String operation) throws IOException {
+    void addRecord(String numeActiune) throws IOException {
         Date date= new Date();
         long time = date.getTime();
-        Timestamp ts = new Timestamp(time);
-        String tm = ts.toString();
-        FileWriter fw = new FileWriter(this.path , true);
-        fw.write(operation + "," + tm + "\n");
-        fw.close();
+        Timestamp timpStamp = new Timestamp(time);
+        String timpString = timpStamp.toString();
+        FileWriter fileWrite = new FileWriter(this.path , true);
+        fileWrite.write(numeActiune + ',' + timpString + "\n");
+        fileWrite.close();
     }
     void printRecords() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(this.path));
-        String line;
-        while((line = br.readLine()) != null) {
-            String[] str = line.split(",");
-            System.out.println(str[0] + " , " + str[1]);
+        BufferedReader bufferRead = new BufferedReader(new FileReader(this.path));
+        String linie;
+        while((linie = bufferRead.readLine()) != null) {
+            String[] s = linie.split(",");
+            System.out.println(s[0] + ", " + s[1]);
         }
-        br.close();
+        bufferRead.close();
     }
 }
