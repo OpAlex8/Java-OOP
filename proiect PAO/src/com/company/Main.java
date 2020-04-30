@@ -33,7 +33,7 @@ public class Main {
             if (optiune==1) {
                 serviciu.AfiseazaDepartamente();
                 try {
-                    audit.addRecord("Afisare Departament");
+                    audit.AdaugaAudit("Afisare Departament");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -41,14 +41,14 @@ public class Main {
                 serviciu.CitesteDepartamentDeLaTastatura();
                 System.out.print("Departamentul a fost adaugat!");
                 try {
-                    audit.addRecord("Adaugare departament nou");
+                    audit.AdaugaAudit("Adaugare departament nou");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }else if(optiune==3){
                 serviciu.AfiseazaAngajati();
                 try {
-                    audit.addRecord("Afisare angajati");
+                    audit.AdaugaAudit("Afisare angajati");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -56,21 +56,21 @@ public class Main {
                 serviciu.CitesteAngajatDeLaTastatura();
                 System.out.print("Angajatul a fost adaugat!");
                 try {
-                    audit.addRecord("Angajat nou adaugat");
+                    audit.AdaugaAudit("Angajat nou adaugat");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }else if(optiune==5){
                 serviciu.StergeAngajat();
                 try {
-                    audit.addRecord("Angajat sters");
+                    audit.AdaugaAudit("Angajat sters");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }else if(optiune==6) {
                 serviciu.AfiseazaProgrameleAngajatilor();
                 try {
-                    audit.addRecord("Afisare program angajati");
+                    audit.AdaugaAudit("Afisare program angajati");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -81,7 +81,7 @@ public class Main {
                 if (tip == 1) {
                     serviciu.ProgrameazaActivitateNoua();
                     try {
-                        audit.addRecord("Activitate angajat adaugata");
+                        audit.AdaugaAudit("Activitate angajat adaugata");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -95,7 +95,7 @@ public class Main {
                 System.out.println("Nu am mai avut timp sa implementez aceasta optiune");
             }else if(optiune==10) {
                 try {
-                    audit.printRecords();
+                    audit.AfiseazaAudit();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
