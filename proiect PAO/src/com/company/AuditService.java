@@ -13,16 +13,7 @@ public class AuditService {
     AuditService (String cale){
         this.path = cale;
     }
-
-    void addRecord(String numeActiune) throws IOException {
-        Date date= new Date();
-        long time = date.getTime();
-        Timestamp timpStamp = new Timestamp(time);
-        String timpString = timpStamp.toString();
-        FileWriter fileWrite = new FileWriter(this.path , true);
-        fileWrite.write(numeActiune + ',' + timpString + "\n");
-        fileWrite.close();
-    }
+    
     void printRecords() throws IOException {
         BufferedReader bufferRead = new BufferedReader(new FileReader(this.path));
         String linie;
@@ -31,5 +22,15 @@ public class AuditService {
             System.out.println(s[0] + ", " + s[1]);
         }
         bufferRead.close();
+    }
+    
+    void addRecord(String numeActiune) throws IOException {
+        Date date= new Date();
+        long time = date.getTime();
+        Timestamp timpStamp = new Timestamp(time);
+        String timpString = timpStamp.toString();
+        FileWriter fileWrite = new FileWriter(this.path , true);
+        fileWrite.write(numeActiune + ',' + timpString + "\n");
+        fileWrite.close();
     }
 }
